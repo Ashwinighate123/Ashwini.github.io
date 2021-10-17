@@ -304,58 +304,64 @@ p {
 /* End About Section */
 
 /*skill*/
-#skill h1{
-	margin:5px
+#skill .skill {
+	flex-direction: column;
+	text-align: center;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 100px 0;
 }
-#skill .skill{
-	width: 700px;
-	margin:90px auto;
-	color: blue;
+ .skill-top {
+	max-width: 500px;
+	margin: 0 auto;
+}
+ .skill-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+ .skill-item {
+	flex-basis: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
 	padding: 30px;
-	box-shadow: 0 14px 28px rgba(0 ,0, 0,0.25),0 10px 10px rgba(0 ,0, 0,0.25);
-}
-.skill li{
-	margin:20px 0;
-	padding: 10px;
-}
-.bar{
-	background:rgb(20, 173, 220);
-    display: block;
-	height: 20px;
-	border: 1px solid rgba(0 ,0, 0,0.3);
 	border-radius: 10px;
+	background-image: url(./img/im.JPG);
+	background-size: cover;
+	margin: 10px 5%;
+	position: relative;
+	z-index: 1;
 	overflow: hidden;
-	box-shadow:black,black;
-	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
-.bar span{
-	height: 20px;
-	float: left;
-	background: linear-gradient(135deg ,rgba(236,0,140,1)0%, rgba(252,103,103,1)100%);
-}
-.html{
+#skill .skill-item::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
 	width: 100%;
-	animation: HTML 3s;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	opacity: 0.9;
+	z-index: -1;
 }
-.css{
-	width: 80%;
-	animation: CSS 3s;
+#skill .skill-bottom .icon {
+	height: 80px;
+	width: 80px;
+	margin-bottom: 20px;
 }
-.java{
-	width: 75%;
-	animation: Java 3s;
+#skill .skill-item h2 {
+	font-size: 2rem;
+	color: white;
+	margin-bottom: 10px;
+	text-transform: uppercase;
 }
-.c{
-	width: 60%;
-	animation: C 3s;
-}
-.python{
-	width: 70%;
-	animation: Python 3s;
-}
-.django{
-	width: 70%;
-	animation: django 3s;
+#skill .skill-item p {
+	color: white;
+	text-align: left;
 }
 
 /* Projects section */
@@ -615,6 +621,12 @@ border-radius: 5px;
 		text-align: left;
 	}
 	/* End About */
+	/* Skill Section */
+	#skill .skill-bottom .skill-item {
+		flex-basis: 45%;
+		margin: 2.5%;
+	}
+	/* End Services Section */
 
 	/* Project */
 	#projects .project-item {
@@ -697,5 +709,10 @@ border-radius: 5px;
 	}
 	
 	/* End header */
+	
+	#skill .skill-bottom .skill-item {
+		flex-basis: 22%;
+		margin: 1.5%;
+	}
 }
 /* End  Media Query For Desktop */
